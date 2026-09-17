@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Katawa Shoujo</title>
+  <link href="CSS/style.css" rel="stylesheet">
+  <script src="JS/app.js" defer></script>
+  <script src="JS/saves.js" defer></script>
+  <script src="JS/connexion.js" defer></script>
+</head>
+<body>
+  <!-- 1) Page d'accueil (screen-login) -->
+  <div id="screen-login">
+    <!-- Messages de bienvenue -->
+    <div id="login-text">
+      <h1>Katawa Shoujo !</h1>
+      <h2>Connectez-vous pour commencer :</h2>
+    </div>
+
+    <!-- Formulaire de connexion -->
+    <form id="Form-Conn">
+      <label for="username">Nom d'utilisateur :</label>
+      <input type="text" name="username" id="username" placeholder="User123">
+      <label for="password">Mot de passe :</label>
+      <input type="password" name="mdp" id="mdp" placeholder="Passw0rd9">
+      <button type="submit" id="btn-connect" action="logout.php">Se connecter</button>
+      <span id="Form-span"></span>
+    </form>
+  </div>
+
+  <!-- 2) Page de jeu (screen-game) -->
+  <div id="screen-game" style="display: none;">
+    <!-- Instructions pour les raccourcis claviers -->
+    <div id="game-instructions">
+      <div class="instruction-item">
+        <img src="Images/space.png" alt="Espace" class="icon">
+        <p>Espace : avancer</p>
+      </div>
+      <div class="instruction-item">
+        <img src="Images/escape.png" alt="Échap" class="icon">
+        <p>Escape : menu</p>
+      </div>
+    </div>
+
+    <!-- Boutons des fonctionnalités (menu, hide/show et déconnexion) -->
+    <div id="buttons">
+      <button id="btn-menu">MENU</button>
+      <button id="btn-hide">HIDE/SHOW</button>
+      <button id="btn-logout" action="logout.php">Se déconnecter</button>
+    </div>
+
+    <!-- Scène (écran de jeu) -->
+    <div id="stage">
+      <div id="layer-bg"></div>
+      <div id="layer-character"></div>
+      <div id="panel-name"></div>
+      <div id="panel-text"></div>
+    </div>
+  </div>
+
+  <!-- 3) Page de menu (screen-menu) -->
+  <div id="screen-menu" style="display: none;">
+    <h2>MENU DES SAUVEGARDES</h2>
+    <!-- Instructions pour écraser ou charger une sauvegarde -->
+    <div id="menu-instructions">
+      <div class="instruction-item">
+        <img src="Images/click-gauche.png" alt="Clic gauche" class="icon">
+        <p>Clic gauche : écraser la sauvegarde</p>
+      </div>
+      <div class="instruction-item">
+        <img src="Images/clic-droit.png" alt="Clic droit" class="icon">
+        <p>Clic droit : charger la sauvegarde</p>
+      </div>
+    </div>
+
+    <!-- Slots des sauvegardes -->
+    <div id="save-slots">
+      <div class="save-slot">
+        <button id="btn-save1">SAVE 1</button>
+        <input type="text" id="input-save1" placeholder="Nom de la sauvegarde 1">
+      </div>
+      <div class="save-slot">
+        <button id="btn-save2">SAVE 2</button>
+        <input type="text" id="input-save2" placeholder="Nom de la sauvegarde 2">
+      </div>
+      <div class="save-slot">
+        <button id="btn-save3">SAVE 3</button>
+        <input type="text" id="input-save3" placeholder="Nom de la sauvegarde 3">
+      </div>
+      <div class="save-slot">
+        <button id="btn-save4">SAVE 4</button>
+        <input type="text" id="input-save4" placeholder="Nom de la sauvegarde 4">
+      </div>
+      <div class="save-slot">
+        <button id="btn-save5">SAVE 5</button>
+        <input type="text" id="input-save5" placeholder="Nom de la sauvegarde 5">
+      </div>
+    </div>
+
+    <!-- Span pour les messages -->
+    <span id="menu-span"></span>
+
+    <!-- Bouton pour relancer une partie -->
+    <button id="btn-restart-menu">RECOMMENCER</button>
+
+    <!-- Bouton de retour -->
+    <button id="btn-game">RETOUR</button>
+  </div>
+</body>
+</html>

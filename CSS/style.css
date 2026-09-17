@@ -1,0 +1,397 @@
+/* CSS global */
+html, body
+{
+    margin: 0;
+}
+
+body
+{
+    display: grid;
+    place-items: center;
+    background-color: #111;
+    color: #eee;
+    font-family: system-ui, sans-serif;
+    background-image: url('../Images/login.jpg');
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+}
+
+/* CSS pour la page d'accueil (screen-login) */
+#screen-login
+{
+    max-width: 960px;
+    width: 100%;
+    padding: 16px;
+}
+
+#login-text h1, #login-text h2
+{
+    text-align: center;
+    color: #4ECDC4;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+#Form-Conn
+{
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 12px;
+}
+
+#screen-login input
+{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #1a1a1a;
+    color: #eee;
+}
+
+#screen-login label
+{
+    color: #4ECDC4;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+#btn-connect
+{
+    width: 100%;
+}
+
+#Form-span
+{
+    display:none;          
+    min-height: 1.4em;
+    font-size: 0.95rem;
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: -4px;
+
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 10px;
+    border-radius: 6px;             
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+/* CSS pour la page de jeu (screen-game) */
+#screen-game
+{
+    max-width: 960px;
+    width: 100%;
+    padding: 16px;
+    display: none;
+    align-items: center;
+}
+
+#buttons
+{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+
+button
+{
+    cursor: pointer;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+}
+
+#game-instructions
+{
+    display: flex;
+    gap: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+
+#game-instructions .instruction-item
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#game-instructions .icon
+{
+    width: 28px;
+    height: 28px;
+}
+
+
+/* CSS pour la page de menu (screen-menu) */
+#screen-menu
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 420px;
+    margin: auto;
+}
+
+#screen-menu h2
+{
+    margin-bottom: 10px;
+}
+
+#menu-instructions
+{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.95em;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.instruction-item
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instruction-item .icon
+{
+    width: 35px;
+    height: 35px;
+}
+
+#save-slots
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.save-slot
+{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.save-slot button
+{
+    flex: 0 0 110px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.save-slot input
+{
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.95em;
+}
+
+#menu-span
+{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#menu-span.info /* Si le message du span est une info */
+{
+    color: #ddd;
+}
+
+#menu-span.error /* Si le message du span est une erreur */
+{
+    color: #ff6b6b;
+}
+
+#btn-game
+{
+    align-self: center;
+    padding: 10px 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+#btn-game:hover
+{
+    background-color: #555;
+}
+
+/* CSS pour l'écran de jeu, c'est-à-dire la scène (stage) */
+#stage
+{
+    position: relative;
+    height: 600px;
+    width: 800px;
+    margin: 0 auto;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 16px;
+    outline: 1px solid #333;
+}
+
+#layer-bg, #layer-character, #panel-name, #panel-text
+{
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+#layer-bg
+{
+    top: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+#layer-character
+{
+    top: 0;
+    height: 100%;
+    z-index: 10;
+}
+
+#panel-text
+{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 160px;
+    max-width: 760px;
+    padding: 16px 20px;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    box-sizing: border-box;
+    z-index: 300;
+}
+
+#panel-name:empty
+{
+    display: none;
+}
+
+#panel-name
+{
+    position: absolute;
+    bottom: 184px;
+    left: calc(50% - 50% * 0.9 + 20px);
+    width: fit-content;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index : 300;
+}
+
+#sprite-stack
+{
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.sprite
+{
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* CSS pour les QCM */
+#qcm-overlay
+{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+
+#qcm-box
+{
+  background: rgba(0,0,0,0.65);
+  padding: 22px 26px;
+  border-radius: 18px;
+  width: 70%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.qcm-question
+{
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-align: center;
+  color: #eee;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.qcm-button
+{
+  background: rgba(30,30,30,0.85);
+  color: #eee;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  text-align: center;
+
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+.qcm-button:hover
+{
+  background: rgba(60,60,60,0.9);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.qcm-button:active
+{
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
